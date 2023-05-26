@@ -1,6 +1,10 @@
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
+# Display
+debug.sf.enable_hwc_vds=0
+persist.sys.brightness.low.gamma=true
+
 # Graphics
 debug.cpurend.vsync=false
 debug.hwui.skia_atrace_enabled=false
