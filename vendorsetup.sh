@@ -25,3 +25,9 @@ apply_patch "packages/modules/Bluetooth" "https://github.com/LineageOS/android_p
 
 # drivers: mediatek: c2k_usb: Fix the implicit truncation of some of the values
 apply_patch "kernel/realme/mt6785" "https://github.com/prathamdubey2005/kernel_realme_mt6785/commit/989e91dd8a9799b22915dbd62048733ea351355d.patch"
+
+# HACK: telephony: Conditionally force enable LTE_CA
+apply_patch "frameworks/base" "https://github.com/begonia-dev/android_frameworks_base/commit/2dd4ceaae6f0e21acc608bb9752b1ffe41d1217c.patch"
+
+# Settings: Add a toggle to force LTE_CA
+apply_patch "packages/apps/Settings" "https://github.com/begonia-dev/android_packages_apps_Settings/commit/a88066cb1451edb42e75eb66d3b6b8a3dbcba9a6.patch"
