@@ -22,3 +22,6 @@ apply_patch "frameworks/base" "https://github.com/AOSP-XIII/frameworks_base/comm
 
 # gd: hci: Ignore unexpected status events
 apply_patch "packages/modules/Bluetooth" "https://github.com/LineageOS/android_packages_modules_Bluetooth/commit/e7f12ea3dbf6dc632f38ecb75a406c64e90a3f34.patch"
+
+# drivers: mediatek: c2k_usb: Fix the implicit truncation of some of the values
+apply_patch "kernel/realme/mt6785" "https://github.com/prathamdubey2005/kernel_realme_mt6785/commit/989e91dd8a9799b22915dbd62048733ea351355d.patch"
