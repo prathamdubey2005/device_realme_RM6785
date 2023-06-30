@@ -8,6 +8,15 @@ function apply_patch() {
     fi
 }
 
+if [ ! -d "prebuilts/clang/host/linux-x86/neutron-clang" ]; then
+    echo -e "\nINFO: Neutron clang not found, cloning it now...\n"
+    mkdir -p prebuilts/clang/host/linux-x86/neutron-clang
+    cd prebuilts/clang/host/linux-x86/neutron-clang
+    bash <(curl -s https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman) -S
+    bash <(curl -s https://raw.githubusercontent.com/Neutron-Toolchains/antman/main/antman) --patch=glibc
+    cd -
+fi
+
 # Media: Import codecs/omx changes from t-alps-q0.mp1-V9.122.1
 apply_patch "frameworks/av" "https://github.com/ArrowOS/android_frameworks_av/commit/1fb1c48309cf01deb9e3f8253cb7fa5961c25595.patch"
 
